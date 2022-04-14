@@ -1,0 +1,16 @@
+:root {
+    --background: black;
+    --main: #32213a;
+    --main-selected: #383B53;
+    --highlight: #66717E;
+    --contrast: #D4D6B9;
+    --contrast-selected: #D1CAA1;
+    --text: white;
+}
+body { 
+    background-color: var(--background);
+}
+* {
+    margin: 0;
+    padding: 0;
+}

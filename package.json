@@ -1,0 +1,20 @@
+{
+  "name": "anime-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "nodemon ./dist/index.js --ignore ./public/",
+    "build": "tsc -p tsconfig.json -watch",
+    "setup": "node dev.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.11"
+  }
+}
