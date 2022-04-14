@@ -25,7 +25,7 @@
   
   /* Change the background color on mouse-over */
   .header a:hover {
-    background-color: var(--main);
+    background-color: var(--main-selected);
     color: var(--text);
   }
   
