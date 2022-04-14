@@ -4,12 +4,13 @@ async function fillFrontPageNotLoggedIn() {
     parsed.data.forEach(anime => {
         let container = document.querySelector(".container")
         if(!container) container = document.appendChild(document.createElement("div"))
-        console.log(anime)
+        // console.log(anime)
         let image = anime.images.jpg.image_url
         let title = anime.title
         let episodeNumber = anime.episodes
         let date = anime.year
         let div = document.createElement("div")
+        div.setAttribute("onclick", `openAnimeFromId('${anime.mal_id}')`)
         div.classList.add("anime-front-page-item")
         container.classList.add("anime-container-grid")
         if(date == null) date = "N/A"
@@ -24,6 +25,29 @@ async function fillFrontPageNotLoggedIn() {
         `
         container.appendChild(div)
     });
+}
+
+async function openAnimeFromId(id) {
+    if(!id) return;
+    let raw = await fetch("https://api.jikan.moe/v4/anime/" + id)
+    let parsed = await raw.json()
+    let image = parsed.images.jpg.large_image_url
+    let genres = parsed.genres
+    let title = parsed.title
+    let title_jap = parsed.title_japanese
+    let type = parsed.type
+    let synopsis = parsed.synopsis
+    let episodes = parsed.episodes
+    let rating = parsed.rating
+    let score = parsed.score
+    let popularityRank = parsed.popularity
+    let isAiring = parsed.airing
+    let date = parsed.year
+    let div = document.createElement("div")
+}
+
+async function searchAnime(query) {
+    if(!query) alert("no query provided")
 }
 
 function frontPageInit() {}

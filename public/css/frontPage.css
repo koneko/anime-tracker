@@ -9,6 +9,7 @@
     width: 210px;
     margin: 0 auto;
     text-align: center;
+    cursor:pointer;
 }
 .anime-container-grid {
     display: grid;
